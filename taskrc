@@ -1,0 +1,41 @@
+#=========================================
+#  _                   _                  
+# | |_    __ _   ___  | | __  _ __    ___ 
+# | __|  / _` | / __| | |/ / | '__|  / __|
+# | |_  | (_| | \__ \ |   <  | |    | (__ 
+#  \__|  \__,_| |___/ |_|\_\ |_|     \___|
+#                                        
+#=========================================
+
+[file]
+
+# Your tasks is written in this file
+# Default: .my_task
+name = .my_task
+
+# The path of your task file
+path = ~/
+
+
+[notify]
+
+# Show your tasks by notify-send
+# Make sure the 'notify-send' can be used
+# Default: on, you can switch off to close it
+switch = on
+# switch = off
+
+
+[color]
+
+# Options: RED, GREEN, YELLOW, BLUE, PINK, CYAN, WHITE
+# First level task
+first = PINK
+# Second level task
+second = CYAN
+
+border = YELLOW
+date = BLUE
+
+
+
