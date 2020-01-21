@@ -10,7 +10,7 @@ import os
 
 cumd=os.path.expanduser("~")
 os.system("mkdir "+cumd+"/.config/test")
-os.system("cp ./taskrc "+cumd+"/.config/test/taskrc")
+os.system("cp ./taskrc "+cumd+"/.config/task/taskrc")
 os.system("sudo cp ./task.py /usr/local/bin/")
 
 sh=os.system("echo 'task.py' >> "+cumd+"/.bashrc")
