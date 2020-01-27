@@ -6,7 +6,9 @@
 
 # @desc: 通过notify-send来显示任务
 
-import os, time, datetime
+import os
+import time, datetime
+import Xlib.display
 from configparser import ConfigParser
 
 
@@ -75,7 +77,28 @@ def notifySend():
             pass
 
 #====================================
+# 是否全屏
+#====================================
+def fullScreen():
+    screen = Xlib.display.Display().screen()
+    root_win = screen.root
 
+    num_of_fs = 0
+    for window in root_win.query_tree()._data['children']:
+        window_name = window.get_wm_name()
+        width = window.get_geometry()._data["width"]
+        height = window.get_geometry()._data["height"]
+
+        if width == screen.width_in_pixels and height == screen.height_in_pixels:
+            num_of_fs += 1
+
+    return num_of_fs
+
+
+
+#====================================
+# 主函数
+#====================================
 if __name__ == "__main__":
     if SWITCH=="on":
         cumd=os.path.expanduser(config['file']['path'])
@@ -84,7 +107,9 @@ if __name__ == "__main__":
         while True:
             NEWTIME=datetime.datetime.now()
             if (NEWTIME-OLDTIME).seconds//60==int(INTERVAL):
-                notifySend()
+                # 全屏不显示
+                if fullScreen()==0:
+                    notifySend()
                 OLDTIME=NEWTIME
             time.sleep(5)
     else:

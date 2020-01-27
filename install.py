@@ -12,6 +12,7 @@ cumd=os.path.expanduser("~")
 os.system("mkdir "+cumd+"/.config/task")
 os.system("cp ./taskrc "+cumd+"/.config/task/taskrc")
 os.system("sudo cp ./task.py /usr/local/bin/")
+os.system("sudo cp ./task_notify.py /usr/local/bin/")
 
 sh=os.system("echo 'task.py' >> "+cumd+"/.bashrc")
 sh=os.system("echo 'task.py' >> "+cumd+"/.zshrc")
