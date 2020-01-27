@@ -25,6 +25,9 @@ path = ~/
 switch = on
 # switch = off
 
+# The interval time(minute)
+interval = 1
+
 
 [color]
 
